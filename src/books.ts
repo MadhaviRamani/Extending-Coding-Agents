@@ -14,6 +14,11 @@ export function filterBooks(books: Book[], { genre, query }: Filter): Book[] {
   );
 }
 
+export function addBook(books: Book[], newBook: Book) {
+  books.push(newBook);
+  return books;
+}
+
 export function toggleRead(books: Book[], id: string): Book[] {
   return books.map((book) =>
     book.id === id ? { ...book, isRead: !book.isRead } : book
